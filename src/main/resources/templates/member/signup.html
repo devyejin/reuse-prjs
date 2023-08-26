@@ -141,34 +141,53 @@
 
               <form id="formAuthentication" class="mb-3" action="/login" method="POST">
                 <div class="mb-3">
-                  <label for="username" class="form-label">Email</label>
+                  <label for="email" class="form-label">Email</label>
                   <input
-                    type="text"
+                    type="email"
                     class="form-control"
-                    id="username"
-                    name="username"
-                    placeholder="Enter your username"
+                    id="email"
+                    name="email"
+                    placeholder="이메일을 입력해주세요."
                     autofocus
+                    required
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+                  <label for="nickname" class="form-label">USER NAME</label>
+                  <input type="text" class="form-control" id="nickname" name="email" placeholder="사용하실 닉네임을 입력해주세요." required/>
                 </div>
                 <div class="mb-3 form-password-toggle">
-                  <label class="form-label" for="password">Password</label>
+                  <label class="form-label" for="pw">Password</label>
                   <div class="input-group input-group-merge">
                     <input
                       type="password"
-                      id="password"
+                      id="pw"
                       class="form-control"
-                      name="password"
+                      name="pw"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
+                      required
                     />
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
+                <div class="mb-3 form-password-toggle">
+                  <label class="form-label" for="confirmPassword">Confirm Password</label>
+                  <div class="input-group input-group-merge">
+                    <input
+                            type="password"
+                            id="confirmPassword"
+                            class="form-control"
+                            name="confirmPassword"
+                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                            aria-describedby="password"
+                            required
+                    />
+                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                  </div>
+                </div>
+                <em id='message'></em>
+
 
                 <div class="mb-3">
                   <div class="form-check">
@@ -179,7 +198,7 @@
                     </label>
                   </div>
                 </div>
-                <button class="btn btn-primary d-grid w-100">Sign up</button>
+                <input type="submit" class="btn btn-primary d-grid w-100">Sign up</input>
               </form>
 
               <p class="text-center">
@@ -222,7 +241,7 @@
     <script src="../assets/js/main.js"></script>
 
     <!-- Page JS -->
-
+    <script src="/js/signup.js"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
