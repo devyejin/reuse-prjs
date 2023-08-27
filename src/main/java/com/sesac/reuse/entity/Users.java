@@ -13,7 +13,6 @@ import java.util.Optional;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name="user")
 public class Users {
 
     @Id
@@ -23,9 +22,23 @@ public class Users {
     private String pw;
     private String nickname;
 
+    @Enumerated(EnumType.STRING)
+    private UsersRole role;
+
 //    private boolean del; <- 회원탈퇴기능 구현여부따라
 
     @Enumerated(EnumType.STRING)
     private SocialSignUpInfo social; // JPA의 경우 Optional을 미지원함
 
+    public void changePw(String pw) {
+        this.pw = pw;
+    }
+
+    public void addRole(UsersRole role) {
+        this.role = role;
+    }
+
+    public void setSocial(SocialSignUpInfo social) {
+        this.social = social;
+    }
 }
