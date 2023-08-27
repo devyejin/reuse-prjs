@@ -45,7 +45,7 @@ public class UsersController {
 
         //정상 가입시
         redirectAttributes.addFlashAttribute("result", "success");
-        return "redirect:/users/login";
+        return "redirect:/user/login";
 
 
 

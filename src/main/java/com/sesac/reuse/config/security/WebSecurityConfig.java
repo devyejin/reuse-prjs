@@ -21,7 +21,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
        http
-                .csrf((csrf) -> csrf.ignoringRequestMatchers("/no-csrf"))
+//                .csrf((csrf) -> csrf.ignoringRequestMatchers("/no-csrf"))
                 .authorizeHttpRequests(requests-> requests
                         .requestMatchers("/","/home","/index","/assets/**",
                                 "/fonts/**","/js/**","/libs/**","/scss/**","/tasks/**").permitAll()
