@@ -24,13 +24,12 @@ class UsersControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
     private UsersService usersService;
 
     @Test
     public void signupSuccessValidation() throws Exception {
-        //given
+
         mockMvc.perform(MockMvcRequestBuilders.post("/user/signup")
                         .with(csrf()) //include csrf token
                         .param("email","test5@naver.com")
@@ -38,7 +37,7 @@ class UsersControllerTest {
                         .param("confirmPw","1234")
                         .param("nickname","testUser"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.redirectedUrl("/users/login"));
+                .andExpect(MockMvcResultMatchers.redirectedUrl("/user/login"));
 
     }
 

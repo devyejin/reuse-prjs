@@ -1,16 +1,19 @@
-document.getElementById("formAuthentication").addEventListener("submit", e => {
+
+const signUpForm = document.getElementById("formAuthentication");
+
+signUpForm.addEventListener("submit", e => {
     e.preventDefault();
     e.stopPropagation();
 
-    const pwd = document.getElementById("password").value;
-    const confirmPwd = document.getElementById("confirmPassword").value;
+    const pw = document.getElementById("pw").value;
+    const confirmPw = document.getElementById("confirmPw").value;
 
-    if(pwd !== confirmPwd) {
+    if(pw !== confirmPw) {
         document.getElementById("message").innerHTML = "비밀번호가 일치하지 않습니다.";
         return false;
     } else {
-        document.getElementById("message").innerHTML = "비밀번호가 일치하지 않습니다.";
-        return true;
+        console.log("비밀번호 일치");
+        signUpForm.submit();
     }
 });
 
